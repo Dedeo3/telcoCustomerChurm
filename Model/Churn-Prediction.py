@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 
 # Step 1: Load the dataset
 # Assuming the dataset is in a file named 'Telco-Customer-Churn.csv'
-df = pd.read_csv('Telco-Customer-Churn.csv')
+df = pd.read_csv('Model\Telco-Customer-Churn.csv')
 
 # Step 2: Data Preprocessing
 
