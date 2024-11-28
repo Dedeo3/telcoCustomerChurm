@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <div class="form-container">
+        <h2>Customer Input Form</h2>
+        <form>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="seniorCitizen">Senior Citizen</label>
+            <select id="seniorCitizen" name="seniorCitizen">
+                <option value="1">1</option>
+                <option value="0">0</option>
+            </select>
+
+            <label for="partner">Partner</label>
+            <select id="partner" name="partner">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="dependents">Dependents</label>
+            <select id="dependents" name="dependents">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="tenure">Tenure (Months)</label>
+            <input type="number" id="tenure" name="tenure" min="0">
+
+            <label for="phoneService">Phone Service</label>
+            <select id="phoneService" name="phoneService">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="multipleLines">Multiple Lines</label>
+            <select id="multipleLines" name="multipleLines">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="noPhoneService">No phone service</option>
+            </select>
+
+            <label for="internetService">Internet Service</label>
+            <select id="internetService" name="internetService">
+                <option value="dsl">DSL</option>
+                <option value="fiber">Fiber optic</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="onlineSecurity">Online Security</label>
+            <select id="onlineSecurity" name="onlineSecurity">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="noInternetService">No internet service</option>
+            </select>
+
+            <label for="onlineBackup">Online Backup</label>
+            <select id="onlineBackup" name="onlineBackup">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="noInternetService">No internet service</option>
+            </select>
+
+            <label for="deviceProtection">Device Protection</label>
+            <select id="deviceProtection" name="deviceProtection">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="noInternetService">No internet service</option>
+            </select>
+
+            <label for="techSupport">Tech Support</label>
+            <select id="techSupport" name="techSupport">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="noInternetService">No internet service</option>
+            </select>
+
+            <label for="streamingTV">Streaming TV</label>
+            <select id="streamingTV" name="streamingTV">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="noInternetService">No internet service</option>
+            </select>
+
+            <label for="streamingMovies">Streaming Movies</label>
+            <select id="streamingMovies" name="streamingMovies">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="noInternetService">No internet service</option>
+            </select>
+
+            <label for="contract">Contract</label>
+            <select id="contract" name="contract">
+                <option value="monthToMonth">Month-to-month</option>
+                <option value="oneYear">One year</option>
+                <option value="twoYear">Two year</option>
+            </select>
+
+            <label for="paperlessBilling">Paperless Billing</label>
+            <select id="paperlessBilling" name="paperlessBilling">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="paymentMethod">Payment Method</label>
+            <select id="paymentMethod" name="paymentMethod">
+                <option value="electronicCheck">Electronic check</option>
+                <option value="mailedCheck">Mailed check</option>
+                <option value="bankTransfer">Bank transfer (automatic)</option>
+                <option value="creditCard">Credit card (automatic)</option>
+            </select>
+
+            <label for="monthlyCharges">Monthly Charges</label>
+            <input type="number" id="monthlyCharges" name="monthlyCharges" min="0" step="0.01">
+
+            <label for="totalCharges">Total Charges</label>
+            <input type="number" id="totalCharges" name="totalCharges" min="0" step="0.01">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
