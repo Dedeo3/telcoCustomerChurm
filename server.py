@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
 from Model.Churn_Prediction import predict_churn
+from Model.Churn_Prediction import y_test, y_pred
+from sklearn.metrics import accuracy_score
 
 app = Flask(__name__ )
+accuracy = accuracy_score(y_test, y_pred)
 
 # @app.route("/", methods=['GET'])
 # def main():
@@ -44,7 +47,7 @@ def predict():
 def result():
     # Ambil hasil prediksi dari query parameter
     prediction = request.args.get('prediction')
-    return render_template("result.html", prediction=prediction)
+    return render_template("result.html", prediction=prediction, accuracy=round(accuracy, 2))
 
 if __name__ == '__main__':
     app.run(debug=True) 

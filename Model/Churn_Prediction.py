@@ -2,15 +2,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.linear_model import LogisticRegression
-from sklearn.linear_model import LinearRegression
-from sklearn.svm import SVC
-from sklearn import tree
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_auc_score, roc_curve
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 import seaborn as sns
@@ -56,7 +48,7 @@ y = df['Churn']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Step 5: Model Training with Random Forest
+# Step 5: Model Training with Logistic Regression
 rf_model = LogisticRegression()
 rf_model.fit(X_train, y_train)
 
@@ -66,25 +58,25 @@ y_pred = rf_model.predict(X_test)
 # Step 7: Model Evaluation
 
 # Accuracy
-accuracy = accuracy_score(y_test, y_pred)
-print(f'Accuracy: {accuracy:.4f}')
+# accuracy = accuracy_score(y_test, y_pred)
+# print(f'Accuracy: {accuracy:.4f}')
 
-# Confusion Matrix
-conf_matrix = confusion_matrix(y_test, y_pred)
-sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues")
-plt.title('Confusion Matrix')
-plt.ylabel('Actual Label')
-plt.xlabel('Predicted Label')
-plt.show()
+# # Confusion Matrix
+# conf_matrix = confusion_matrix(y_test, y_pred)
+# sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues")
+# plt.title('Confusion Matrix')
+# plt.ylabel('Actual Label')
+# plt.xlabel('Predicted Label')
+# plt.show()
 
-# Classification Report
-print('Classification Report:')
-print(classification_report(y_test, y_pred))
+# # Classification Report
+# print('Classification Report:')
+# print(classification_report(y_test, y_pred))
 
-# ROC Curve and AUC
-y_pred_proba = rf_model.predict_proba(X_test)[:,1]
-roc_auc = roc_auc_score(y_test, y_pred_proba)
-fpr, tpr, thresholds = roc_curve(y_test, y_pred_proba)
+# # ROC Curve and AUC
+# y_pred_proba = rf_model.predict_proba(X_test)[:,1]
+# roc_auc = roc_auc_score(y_test, y_pred_proba)
+# fpr, tpr, thresholds = roc_curve(y_test, y_pred_proba)
 
 # print(f'ROC AUC Score: {roc_auc:.4f}')
 

@@ -121,10 +121,10 @@
                 <option value="creditCard">Credit card (automatic)</option>
             </select>
 
-            <label for="monthlyCharges">Monthly Charges</label>
+            <label for="monthlyCharges">Monthly Charges (US Dollar)</label>
             <input type="number" id="monthlyCharges" name="monthlyCharges" min="0" step="0.01">
 
-            <label for="totalCharges">Total Charges</label>
+            <label for="totalCharges">Total Charges (US Dollar)</label>
             <input type="number" id="totalCharges" name="totalCharges" min="0" step="0.01">
 
             <button type="submit">Submit</button>
@@ -136,5 +136,39 @@
         {% endif %}
 
     </div>
+    <script>
+        document.getElementById("internetService").addEventListener("change", function() {
+            const dependentFields = [
+                "onlineSecurity",
+                "onlineBackup",
+                "deviceProtection",
+                "techSupport",
+                "streamingTV",
+                "streamingMovies"
+            ];
+            
+            const selectedValue = this.value;
+            dependentFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (selectedValue === "no") {
+                    field.value = "noInternetService";
+                    field.disabled = true; // Optional: Disable field to prevent user changes
+                } else {
+                    field.disabled = false; // Enable field if internetService is not "no"
+                }
+            });
+        });
+        document.getElementById("phoneService").addEventListener("change", function() {
+            const dependentFields = document.getElementById("multipleLines");
+            
+            const selectedValue = this.value;
+            if (selectedValue === "no") {
+                dependentFields.value = "noPhoneService";
+                dependentFields.disabled = true; 
+            } else {
+                dependentFields.disabled = false; 
+            }
+        });
+    </script>
 </body>
 </html>
